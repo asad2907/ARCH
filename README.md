@@ -7,6 +7,11 @@ Static portfolio website for Tabeen Atelier, structured for direct deployment to
 ```text
 .
 |-- index.html
+|-- about.html
+|-- services.html
+|-- projects.html
+|-- journal.html
+|-- contact.html
 |-- assets/
 |   |-- images/
 |   |   `-- noise-texture.svg

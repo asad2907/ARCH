@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tabeen Atelier — A luxury architecture studio creating spaces of refined permanence. Projects spanning private residences, cultural institutions, and civic architecture.">
+<meta name="keywords" content="architecture studio, luxury design, residential architecture, cultural buildings, atelier form">
+<meta property="og:title" content="Tabeen Atelier — Architecture Studio">
+<meta property="og:description" content="We design spaces of refined permanence.">
+<meta property="og:type" content="website">
+<title>Contact - Tabeen Atelier</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<!-- GSAP + Lenis via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor">
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-label" id="cursorLabel"></div>
+</div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-wordmark">
+    <span class="loader-wordmark-inner">Tabeen Atelier</span>
+  </div>
+  <div class="loader-sub">Architecture Studio — Est. MMX</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">Tabeen Atelier<sup>©</sup></a>
+  <div class="nav-center">
+<a href="index.html"     class="nav-link">Home</a>
+<a href="projects.html" class="nav-link">Projects</a>
+<a href="about.html"   class="nav-link">About</a>
+<a href="services.html" class="nav-link">Services</a>
+<a href="journal.html"  class="nav-link">Journal</a>
+<a href="contact.html"  class="nav-link active">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="contact.html" class="nav-enquire">Enquire</a>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-links">
+    <a href="index.html"     class="mobile-menu-link"><span class="mobile-menu-link-inner">Home</span></a>
+    <a href="projects.html" class="mobile-menu-link"><span class="mobile-menu-link-inner">Projects</span></a>
+    <a href="about.html"   class="mobile-menu-link"><span class="mobile-menu-link-inner">Studio</span></a>
+    <a href="services.html" class="mobile-menu-link"><span class="mobile-menu-link-inner">Services</span></a>
+    <a href="journal.html"  class="mobile-menu-link"><span class="mobile-menu-link-inner">Journal</span></a>
+    <a href="contact.html"  class="mobile-menu-link"><span class="mobile-menu-link-inner">Contact</span></a>
+  </div>
+  <div class="mobile-menu-bottom">
+    <div class="mobile-menu-contact">
+      <div>Zürich / London / Tokyo</div>
+      <div style="margin-top:4px;color:rgba(244,242,238,0.45)">studio@atelierform.com</div>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;color:rgba(244,242,238,0.2)">© 2026</div>
+  </div>
+</div>
+
+<!-- ==============================
+     CONTACT PAGE
+     ============================== -->
+<div id="contact-page" class="page-section active">
+  <section id="contact">
+    <div class="contact-hero">
+      <span class="section-label reveal-up" style="color:rgba(244,242,238,0.3);margin-bottom:24px;display:flex">Get in touch</span>
+      <h1 class="contact-hero-title">
+        <span class="line-reveal"><span class="line-reveal-inner">Let's make</span></span>
+        <span class="line-reveal"><span class="line-reveal-inner">something <em>lasting</em></span></span>
+        <span class="line-reveal"><span class="line-reveal-inner">together.</span></span>
+      </h1>
+    </div>
+    <div class="contact-body">
+      <div class="contact-form-col">
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-name">Full name</label>
+              <input type="text" id="cf-name" placeholder="Your name" autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="cf-email">Email address</label>
+              <input type="email" id="cf-email" placeholder="you@example.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="cf-org">Organisation</label>
+            <input type="text" id="cf-org" placeholder="Optional">
+          </div>
+          <div class="form-field">
+            <label for="cf-type">Project type</label>
+            <select id="cf-type">
+              <option value="" disabled selected>Select a typology</option>
+              <option>Private Residence</option>
+              <option>Cultural Institution</option>
+              <option>Civic Building</option>
+              <option>Mixed-use Development</option>
+              <option>Interior Architecture</option>
+              <option>Urban Strategy</option>
+              <option>Competition</option>
+              <option>Research Collaboration</option>
+              <option>Other enquiry</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-budget">Approximate budget</label>
+            <select id="cf-budget">
+              <option value="" disabled selected>Select a range</option>
+              <option>Under CHF 500K</option>
+              <option>CHF 500K – 1M</option>
+              <option>CHF 1M – 5M</option>
+              <option>CHF 5M – 20M</option>
+              <option>Over CHF 20M</option>
+              <option>Not yet defined</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Tell us about the project</label>
+            <textarea id="cf-message" rows="5" placeholder="Site, programme, timeline, and anything else you think we should know…"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-submit"><span>Send enquiry</span></button>
+          </div>
+          <div id="formSuccess" style="display:none;margin-top:20px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--accent)">
+            Thank you — we will respond within two working days.
+          </div>
+        </form>
+      </div>
+      <div class="contact-info-col">
+        <div class="contact-info-item reveal-up">
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-val"><a href="mailto:studio@atelierform.com">studio@atelierform.com</a></div>
+        </div>
+        <div class="contact-info-item reveal-up">
+          <div class="contact-info-label">Zürich Office</div>
+          <div class="contact-info-val">Talstrasse 58, 4th Floor<br>8001 Zürich, Switzerland</div>
+        </div>
+        <div class="contact-info-item reveal-up">
+          <div class="contact-info-label">London Office</div>
+          <div class="contact-info-val">24 Sekforde Street<br>London EC1R 0HA, UK</div>
+        </div>
+        <div class="contact-info-item reveal-up">
+          <div class="contact-info-label">Tokyo Office</div>
+          <div class="contact-info-val">2-14-8 Tomigaya<br>Shibuya-ku, Tokyo</div>
+        </div>
+        <div class="contact-info-item reveal-up">
+          <div class="contact-info-label">New business</div>
+          <div class="contact-info-val"><a href="mailto:new@atelierform.com">new@atelierform.com</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-map" aria-label="Abstract location reference">
+      <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1200" height="300" fill="#0c0e14"/>
+        <defs>
+          <pattern id="mapgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(180,200,240,0.05)" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="300" fill="url(#mapgrid)"/>
+        <!-- Simplified map lines -->
+        <path d="M0 180 Q200 160 400 170 Q600 180 800 160 Q1000 140 1200 155" fill="none" stroke="rgba(200,190,170,0.08)" stroke-width="0.6"/>
+        <path d="M0 220 Q300 200 600 210 Q900 220 1200 200" fill="none" stroke="rgba(200,190,170,0.05)" stroke-width="0.5"/>
+        <line x1="0" y1="120" x2="1200" y2="120" stroke="rgba(200,190,170,0.04)" stroke-width="0.4"/>
+        <!-- Location markers -->
+        <circle cx="460" cy="165" r="4" fill="none" stroke="var(--accent)" stroke-width="0.8"/>
+        <circle cx="460" cy="165" r="1.5" fill="var(--accent)"/>
+        <text x="468" y="160" fill="rgba(200,190,170,0.4)" font-size="8" font-family="'DM Mono',monospace" letter-spacing="2">ZÜRICH</text>
+        <circle cx="310" cy="140" r="4" fill="none" stroke="rgba(200,190,170,0.3)" stroke-width="0.8"/>
+        <circle cx="310" cy="140" r="1.5" fill="rgba(200,190,170,0.4)"/>
+        <text x="318" y="135" fill="rgba(200,190,170,0.3)" font-size="8" font-family="'DM Mono',monospace" letter-spacing="2">LONDON</text>
+        <circle cx="1020" cy="130" r="4" fill="none" stroke="rgba(200,190,170,0.3)" stroke-width="0.8"/>
+        <circle cx="1020" cy="130" r="1.5" fill="rgba(200,190,170,0.4)"/>
+        <text x="1028" y="125" fill="rgba(200,190,170,0.3)" font-size="8" font-family="'DM Mono',monospace" letter-spacing="2">TOKYO</text>
+      </svg>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER (shared) -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">Tabeen Atelier<sup style="font-size:10px;letter-spacing:0;opacity:0.4"> ©</sup></div>
+    <p class="footer-tagline">Architecture Studio<br>Founded 2010<br>Zürich · London · Tokyo</p>
+  </div>
+  <div>
+    <div class="footer-col-title">Practice</div>
+    <ul class="footer-col-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Typologies</div>
+    <ul class="footer-col-links">
+      <li><a href="projects.html">Residential</a></li>
+      <li><a href="projects.html">Cultural</a></li>
+      <li><a href="projects.html">Civic</a></li>
+      <li><a href="projects.html">Mixed-use</a></li>
+      <li><a href="projects.html">Interior</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Connect</div>
+    <ul class="footer-col-links">
+      <li><a href="mailto:studio@atelierform.com">studio@atelierform.com</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Archinect</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-copy">© 2026 Tabeen Atelier. All rights reserved.</span>
+  <span class="footer-copy">Privacy · Legal · Cookies</span>
+</div>
+
+<!-- ============================
+     SCRIPTS
+     ============================ -->
+<script src="js/script.js"></script>
+</body>
+</html>

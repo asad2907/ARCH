@@ -8,7 +8,7 @@
 <meta property="og:title" content="Tabeen Atelier — Architecture Studio">
 <meta property="og:description" content="We design spaces of refined permanence.">
 <meta property="og:type" content="website">
-<title>Tabeen Atelier — Architecture Studio</title>
+<title>Home - Tabeen Atelier</title>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
 
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="home">
 
 <!-- Scroll Progress -->
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -45,17 +45,17 @@
 
 <!-- Nav -->
 <nav class="nav" id="nav">
-  <a href="#home" class="nav-logo" data-page="home">Tabeen Atelier<sup>©</sup></a>
+  <a href="index.html" class="nav-logo">Tabeen Atelier<sup>©</sup></a>
   <div class="nav-center">
-<a href="#home"     class="nav-link active" data-page="home">Home</a>
-<a href="#projects" class="nav-link" data-page="projects">Projects</a>
-<a href="#studio"   class="nav-link" data-page="studio">Studio</a>
-<a href="#services" class="nav-link" data-page="services">Services</a>
-<a href="#journal"  class="nav-link" data-page="journal">Journal</a>
-<a href="#contact"  class="nav-link" data-page="contact">Contact</a>
+<a href="index.html"     class="nav-link active">Home</a>
+<a href="projects.html" class="nav-link">Projects</a>
+<a href="about.html"   class="nav-link">About</a>
+<a href="services.html" class="nav-link">Services</a>
+<a href="journal.html"  class="nav-link">Journal</a>
+<a href="contact.html"  class="nav-link">Contact</a>
   </div>
   <div class="nav-right">
-    <a href="#contact" class="nav-enquire" data-page="contact">Enquire</a>
+    <a href="contact.html" class="nav-enquire">Enquire</a>
     <button class="nav-menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -65,12 +65,12 @@
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-links">
-    <a href="#home"     class="mobile-menu-link" data-page="home"><span class="mobile-menu-link-inner">Home</span></a>
-    <a href="#projects" class="mobile-menu-link" data-page="projects"><span class="mobile-menu-link-inner">Projects</span></a>
-    <a href="#studio"   class="mobile-menu-link" data-page="studio"><span class="mobile-menu-link-inner">Studio</span></a>
-    <a href="#services" class="mobile-menu-link" data-page="services"><span class="mobile-menu-link-inner">Services</span></a>
-    <a href="#journal"  class="mobile-menu-link" data-page="journal"><span class="mobile-menu-link-inner">Journal</span></a>
-    <a href="#contact"  class="mobile-menu-link" data-page="contact"><span class="mobile-menu-link-inner">Contact</span></a>
+    <a href="index.html"     class="mobile-menu-link"><span class="mobile-menu-link-inner">Home</span></a>
+    <a href="projects.html" class="mobile-menu-link"><span class="mobile-menu-link-inner">Projects</span></a>
+    <a href="about.html"   class="mobile-menu-link"><span class="mobile-menu-link-inner">Studio</span></a>
+    <a href="services.html" class="mobile-menu-link"><span class="mobile-menu-link-inner">Services</span></a>
+    <a href="journal.html"  class="mobile-menu-link"><span class="mobile-menu-link-inner">Journal</span></a>
+    <a href="contact.html"  class="mobile-menu-link"><span class="mobile-menu-link-inner">Contact</span></a>
   </div>
   <div class="mobile-menu-bottom">
     <div class="mobile-menu-contact">
@@ -311,7 +311,7 @@
             <span class="feat-proj-meta-val">Completed</span>
           </div>
         </div>
-        <a href="#projects" class="btn-text reveal-up" data-page="projects">
+        <a href="projects.html" class="btn-text reveal-up">
           <span class="btn-text-arrow"></span>
           View project
         </a>
@@ -323,7 +323,7 @@
   <div class="h-scroll-section">
     <div class="h-scroll-title-row">
       <h2 class="h-scroll-title reveal-up">Recent work</h2>
-      <a href="#projects" class="btn-text reveal-up" data-page="projects">
+      <a href="projects.html" class="btn-text reveal-up">
         <span class="btn-text-arrow"></span>All projects
       </a>
     </div>
@@ -452,7 +452,7 @@
   <div class="closing-cta">
     <p class="closing-cta-eyebrow reveal-up">Start a conversation</p>
     <h2 class="closing-cta-title reveal-up">Have a project<br>in <em>mind?</em></h2>
-    <a href="#contact" class="btn-text reveal-up" data-page="contact" style="justify-content:center">
+    <a href="contact.html" class="btn-text reveal-up" style="justify-content:center">
       <span class="btn-text-arrow"></span>
       Let's talk
     </a>
@@ -460,675 +460,6 @@
 
 </div><!-- end home page -->
 
-
-<!-- ==============================
-     PROJECTS PAGE
-     ============================== -->
-<div id="projects-page" class="page-section">
-  <section id="projects">
-    <div class="projects-hero">
-      <h1 class="projects-hero-title">
-        <span class="line-reveal"><span class="line-reveal-inner">Selected</span></span>
-        <span class="line-reveal"><span class="line-reveal-inner"><em style="font-style:italic;color:var(--warm-grey)">work</em></span></span>
-      </h1>
-      <p class="projects-hero-sub">86 projects across residential, cultural, civic, and commercial typologies — spanning Switzerland, the United Kingdom, Germany, Japan, and beyond.</p>
-    </div>
-    <div class="projects-filter">
-      <button class="filter-btn active" data-filter="all">All work</button>
-      <button class="filter-btn" data-filter="residential">Residential</button>
-      <button class="filter-btn" data-filter="cultural">Cultural</button>
-      <button class="filter-btn" data-filter="civic">Civic</button>
-      <button class="filter-btn" data-filter="mixed">Mixed-use</button>
-      <button class="filter-btn" data-filter="interior">Interior</button>
-    </div>
-    <div class="projects-grid">
-      <!-- Card 1 -->
-      <div class="project-card" data-cat="cultural">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="450" fill="#0f1420"/>
-            <polygon points="400,30 750,420 50,420" fill="none" stroke="rgba(200,190,170,0.2)" stroke-width="0.7"/>
-            <polygon points="400,80 700,410 100,410" fill="none" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
-            <rect x="340" y="310" width="120" height="110" fill="rgba(12,18,30,0.95)" stroke="rgba(200,190,170,0.3)" stroke-width="0.6"/>
-            <line x1="0" y1="420" x2="800" y2="420" stroke="rgba(200,190,170,0.18)" stroke-width="0.8"/>
-            <ellipse cx="400" cy="420" rx="200" ry="12" fill="rgba(0,0,0,0.4)"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Mörschwil Cultural Centre</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Cultural</span>
-            <span class="project-card-year">2024</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-      <!-- Card 2 -->
-      <div class="project-card" data-cat="residential">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="600" height="450" fill="#12100c"/>
-            <rect x="80" y="100" width="440" height="320" fill="rgba(16,14,10,0.95)" stroke="rgba(200,190,170,0.25)" stroke-width="0.6"/>
-            <rect x="180" y="200" width="240" height="220" fill="rgba(10,8,6,0.9)" stroke="rgba(200,190,170,0.3)" stroke-width="0.5"/>
-            <rect x="200" y="230" width="80" height="60" fill="rgba(15,25,45,0.8)" stroke="rgba(80,130,200,0.2)" stroke-width="0.5"/>
-            <line x1="0" y1="420" x2="600" y2="420" stroke="rgba(200,190,170,0.15)" stroke-width="0.7"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Haus am See</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Residential</span>
-            <span class="project-card-year">2024</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-      <!-- Card 3 -->
-      <div class="project-card" data-cat="civic">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 500 375" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="500" height="375" fill="#0a0c10"/>
-            <rect x="60" y="50" width="380" height="280" fill="rgba(12,15,22,0.95)" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-            <line x1="60" y1="130" x2="440" y2="130" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/>
-            <line x1="60" y1="210" x2="440" y2="210" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/>
-            <line x1="60" y1="290" x2="440" y2="290" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/>
-            <rect x="190" y="290" width="120" height="40" fill="rgba(8,10,18,0.95)" stroke="rgba(200,190,170,0.25)" stroke-width="0.5"/>
-            <circle cx="250" cy="90" r="24" fill="none" stroke="rgba(200,190,170,0.25)" stroke-width="0.6"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Stadtbibliothek Frauenfeld</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Civic</span>
-            <span class="project-card-year">2023</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-      <!-- Card 4 -->
-      <div class="project-card" data-cat="residential">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 500 375" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="500" height="375" fill="#0e0c08"/>
-            <rect x="40" y="80" width="200" height="260" fill="rgba(14,12,8,0.95)" stroke="rgba(200,190,170,0.22)" stroke-width="0.5"/>
-            <rect x="260" y="120" width="200" height="220" fill="rgba(14,12,8,0.95)" stroke="rgba(200,190,170,0.22)" stroke-width="0.5"/>
-            <rect x="110" y="280" width="60" height="60" fill="rgba(15,25,45,0.8)" stroke="rgba(80,130,200,0.2)" stroke-width="0.4"/>
-            <line x1="0" y1="340" x2="500" y2="340" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Duplex Seefeld</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Residential</span>
-            <span class="project-card-year">2023</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-      <!-- Card 5 -->
-      <div class="project-card" data-cat="mixed">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 500 375" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="500" height="375" fill="#08101a"/>
-            <rect x="100" y="30" width="80" height="310" fill="rgba(10,16,28,0.95)" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-            <rect x="210" y="80" width="80" height="260" fill="rgba(10,16,28,0.95)" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-            <rect x="320" y="130" width="80" height="210" fill="rgba(10,16,28,0.95)" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-            <line x1="0" y1="340" x2="500" y2="340" stroke="rgba(200,190,170,0.15)" stroke-width="0.7"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Triptych Tower</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Mixed-use</span> 
-            <span class="project-card-year">2023</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-      <!-- Card 6 -->
-      <div class="project-card" data-cat="interior">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 700 525" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="700" height="525" fill="#0a0808"/>
-            <rect x="0" y="0" width="700" height="80" fill="rgba(10,8,8,0.98)"/>
-            <rect x="0" y="440" width="700" height="85" fill="rgba(10,8,8,0.98)"/>
-            <rect x="0" y="80" width="60" height="360" fill="rgba(10,8,8,0.98)"/>
-            <rect x="640" y="80" width="60" height="360" fill="rgba(10,8,8,0.98)"/>
-            <rect x="60" y="80" width="580" height="360" fill="rgba(8,6,6,0.8)"/>
-            <line x1="60" y1="80" x2="640" y2="80" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-            <line x1="60" y1="440" x2="640" y2="440" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-            <rect x="140" y="350" width="80" height="90" fill="rgba(15,12,10,0.95)" stroke="rgba(200,190,170,0.25)" stroke-width="0.5"/>
-            <rect x="480" y="350" width="80" height="90" fill="rgba(15,12,10,0.95)" stroke="rgba(200,190,170,0.25)" stroke-width="0.5"/>
-            <line x1="350" y1="100" x2="350" y2="340" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-            <circle cx="350" cy="350" r="14" fill="rgba(200,190,170,0.06)" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Galerie Neuf Interior</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Interior</span>
-            <span class="project-card-year">2022</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-      <!-- Card 7 -->
-      <div class="project-card" data-cat="civic">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 700 525" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="700" height="525" fill="#090c14"/>
-            <ellipse cx="350" cy="320" rx="240" ry="120" fill="rgba(10,15,26,0.95)" stroke="rgba(200,190,170,0.2)" stroke-width="0.6"/>
-            <ellipse cx="350" cy="310" rx="180" ry="90" fill="rgba(8,12,22,0.95)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-            <line x1="350" y1="100" x2="350" y2="225" stroke="rgba(200,190,170,0.3)" stroke-width="0.6"/>
-            <circle cx="350" cy="90" r="16" fill="rgba(200,190,170,0.06)" stroke="rgba(200,190,170,0.3)" stroke-width="0.6"/>
-            <line x1="0" y1="440" x2="700" y2="440" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Observatory Ring Tokyo</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Civic</span>
-            <span class="project-card-year">2023</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-      <!-- Card 8 -->
-      <div class="project-card" data-cat="residential">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="600" height="450" fill="#0c0e0a"/>
-            <rect x="60" y="100" width="480" height="310" fill="rgba(12,14,10,0.95)" stroke="rgba(200,190,170,0.22)" stroke-width="0.6"/>
-            <rect x="200" y="180" width="200" height="230" fill="rgba(8,10,8,0.95)" stroke="rgba(200,190,170,0.28)" stroke-width="0.5"/>
-            <rect x="215" y="195" width="70" height="50" fill="rgba(15,25,45,0.7)" stroke="rgba(80,130,200,0.25)" stroke-width="0.4"/>
-            <rect x="315" y="195" width="70" height="50" fill="rgba(15,25,45,0.7)" stroke="rgba(80,130,200,0.25)" stroke-width="0.4"/>
-            <line x1="0" y1="410" x2="600" y2="410" stroke="rgba(200,190,170,0.15)" stroke-width="0.7"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Villa Lacustre</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Residential</span>
-            <span class="project-card-year">2022</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-      <!-- Card 9 -->
-      <div class="project-card" data-cat="cultural">
-        <div class="project-card-visual">
-          <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="800" height="450" fill="#060810"/>
-            <rect x="0" y="200" width="800" height="250" fill="rgba(8,10,16,0.9)"/>
-            <rect x="100" y="80" width="600" height="320" fill="rgba(8,10,18,0.95)" stroke="rgba(200,190,170,0.2)" stroke-width="0.6"/>
-            <line x1="100" y1="160" x2="700" y2="160" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/>
-            <line x1="100" y1="240" x2="700" y2="240" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/>
-            <line x1="100" y1="320" x2="700" y2="320" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/>
-            <line x1="250" y1="80" x2="250" y2="400" stroke="rgba(200,190,170,0.08)" stroke-width="0.4"/>
-            <line x1="400" y1="80" x2="400" y2="400" stroke="rgba(200,190,170,0.08)" stroke-width="0.4"/>
-            <line x1="550" y1="80" x2="550" y2="400" stroke="rgba(200,190,170,0.08)" stroke-width="0.4"/>
-            <line x1="0" y1="400" x2="800" y2="400" stroke="rgba(200,190,170,0.2)" stroke-width="0.7"/>
-          </svg>
-        </div>
-        <div class="project-card-info">
-          <h3 class="project-card-title">Pavilion Vaud</h3>
-          <div class="project-card-meta">
-            <span class="project-card-cat">Cultural</span>
-            <span class="project-card-year">2022</span>
-          </div>
-        </div>
-        <div class="project-card-overlay"><span class="project-card-hover-label">View project →</span></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ==============================
-     STUDIO PAGE
-     ============================== -->
-<div id="studio-page" class="page-section">
-  <section id="studio">
-    <div class="studio-hero">
-      <div class="studio-hero-left">
-        <p class="feat-proj-tag reveal-up" style="margin-bottom:20px">About the practice</p>
-        <h1 class="studio-hero-title reveal-up">The studio behind the form.</h1>
-        <p class="studio-hero-subtitle reveal-up">Architecture as a sustained act of attention.</p>
-        <p class="studio-hero-body reveal-up">Founded in 2010 by Isabelle Meier and Tomas Varga, Tabeen Atelier is a practice built around the conviction that every building should be the best possible version of itself — not the most innovative, not the most profitable, but the most resolved.</p>
-      </div>
-      <div class="studio-hero-right">
-        <svg viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <rect width="700" height="700" fill="#161210"/>
-          <line x1="0" y1="350" x2="700" y2="350" stroke="rgba(200,190,170,0.06)" stroke-width="0.5"/>
-          <line x1="350" y1="0" x2="350" y2="700" stroke="rgba(200,190,170,0.06)" stroke-width="0.5"/>
-          <!-- Architectural plan —  ground floor -->
-          <rect x="80" y="80" width="540" height="540" fill="none" stroke="rgba(200,190,170,0.2)" stroke-width="0.8"/>
-          <!-- Rooms -->
-          <rect x="80" y="80" width="260" height="180" fill="rgba(22,18,16,0.9)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-          <rect x="340" y="80" width="280" height="180" fill="rgba(22,18,16,0.9)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-          <rect x="80" y="260" width="180" height="360" fill="rgba(22,18,16,0.9)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-          <rect x="260" y="260" width="360" height="360" fill="rgba(22,18,16,0.9)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-          <!-- Staircase -->
-          <rect x="230" y="260" width="30" height="30" fill="rgba(200,190,170,0.05)" stroke="rgba(200,190,170,0.2)" stroke-width="0.4"/>
-          <line x1="230" y1="265" x2="260" y2="265" stroke="rgba(200,190,170,0.12)" stroke-width="0.4"/>
-          <line x1="230" y1="271" x2="260" y2="271" stroke="rgba(200,190,170,0.12)" stroke-width="0.4"/>
-          <line x1="230" y1="277" x2="260" y2="277" stroke="rgba(200,190,170,0.12)" stroke-width="0.4"/>
-          <line x1="230" y1="283" x2="260" y2="283" stroke="rgba(200,190,170,0.12)" stroke-width="0.4"/>
-          <!-- Door swings -->
-          <path d="M80 215 A40 40 0 0 1 120 175" fill="none" stroke="rgba(200,190,170,0.18)" stroke-width="0.4"/>
-          <path d="M80 215 L80 175" fill="none" stroke="rgba(200,190,170,0.18)" stroke-width="0.4"/>
-          <path d="M340 215 A40 40 0 0 1 380 175" fill="none" stroke="rgba(200,190,170,0.18)" stroke-width="0.4"/>
-          <!-- North arrow -->
-          <circle cx="620" cy="120" r="18" fill="none" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-          <polygon points="620,100 615,124 620,120 625,124" fill="none" stroke="rgba(200,190,170,0.4)" stroke-width="0.5"/>
-          <polygon points="620,100 615,124 620,120 625,124" fill="rgba(200,190,170,0.15)"/>
-          <text x="620" y="144" text-anchor="middle" fill="rgba(200,190,170,0.3)" font-size="8" font-family="'DM Mono', monospace">N</text>
-          <!-- Scale bar -->
-          <line x1="80" y1="650" x2="180" y2="650" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-          <line x1="80" y1="645" x2="80" y2="655" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-          <line x1="130" y1="645" x2="130" y2="655" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-          <line x1="180" y1="645" x2="180" y2="655" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
-          <text x="130" y="665" text-anchor="middle" fill="rgba(200,190,170,0.2)" font-size="8" font-family="'DM Mono', monospace" letter-spacing="2">5m</text>
-          <text x="400" y="665" text-anchor="middle" fill="rgba(200,190,170,0.12)" font-size="8" font-family="'DM Mono', monospace" letter-spacing="2">FLOOR PLAN — GROUND LEVEL</text>
-        </svg>
-      </div>
-    </div>
-    <div class="studio-philosophy">
-      <h2 class="studio-philosophy-title reveal-up">Our principles</h2>
-      <div class="studio-philosophy-content">
-        <p class="studio-philosophy-para reveal-up">
-          We believe that <strong>architecture is first and foremost a spatial art</strong> — not a technical exercise, not an investment vehicle, not a medium for self-expression. Buildings should make life better for the people who inhabit them. This belief guides every decision we make, from site strategy to door handle selection.
-        </p>
-        <p class="studio-philosophy-para reveal-up">
-          The studio is intentionally <strong>small</strong>. We take on twelve to sixteen projects per year. Every project is led by a founding principal from inception to completion. We do not delegate creative responsibility to junior staff, and we do not take on more work than we can do well.
-        </p>
-        <p class="studio-philosophy-para reveal-up">
-          We are <strong>material thinkers</strong>. Concrete, stone, timber, glass — chosen not for fashion but for longevity, tactility, and the capacity to age gracefully. We resist the trend toward novelty. A building that looks extraordinary on the day it opens but unremarkable ten years later has failed in its primary purpose.
-        </p>
-        <p class="studio-philosophy-para reveal-up">
-          <strong>Sustainability is not a feature.</strong> It is a precondition. Every project is designed from the outset to reduce energy demand, respond to its climate, and extend its useful life as long as possible.
-        </p>
-      </div>
-    </div>
-    <div class="studio-team">
-      <h2 class="studio-team-title reveal-up">The team</h2>
-      <div class="team-grid">
-        <div class="team-card reveal-up">
-          <div class="team-card-portrait">
-            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-              <rect width="300" height="400" fill="#12100e"/>
-              <rect x="0" y="180" width="300" height="220" fill="#0e0c0a"/>
-              <!-- Abstract portrait -->
-              <circle cx="150" cy="130" r="60" fill="rgba(30,25,20,0.9)" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
-              <ellipse cx="150" cy="320" rx="100" ry="60" fill="rgba(25,20,16,0.9)"/>
-              <line x1="0" y1="395" x2="300" y2="395" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-            </svg>
-          </div>
-          <div class="team-card-name">Isabelle Meier</div>
-          <div class="team-card-role">Founding Principal</div>
-        </div>
-        <div class="team-card reveal-up">
-          <div class="team-card-portrait">
-            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-              <rect width="300" height="400" fill="#100e0c"/>
-              <rect x="0" y="160" width="300" height="240" fill="#0c0a08"/>
-              <circle cx="150" cy="120" r="58" fill="rgba(28,22,18,0.9)" stroke="rgba(200,190,170,0.1)" stroke-width="0.5"/>
-              <ellipse cx="150" cy="330" rx="110" ry="65" fill="rgba(22,18,14,0.9)"/>
-              <line x1="0" y1="395" x2="300" y2="395" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
-            </svg>
-          </div>
-          <div class="team-card-name">Tomas Varga</div>
-          <div class="team-card-role">Founding Principal</div>
-        </div>
-        <div class="team-card reveal-up">
-          <div class="team-card-portrait">
-            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-              <rect width="300" height="400" fill="#0e100e"/>
-              <rect x="0" y="170" width="300" height="230" fill="#0a0c0a"/>
-              <circle cx="150" cy="125" r="56" fill="rgba(22,28,22,0.9)" stroke="rgba(200,190,170,0.1)" stroke-width="0.5"/>
-              <ellipse cx="150" cy="325" rx="105" ry="62" fill="rgba(18,22,18,0.9)"/>
-              <line x1="0" y1="395" x2="300" y2="395" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
-            </svg>
-          </div>
-          <div class="team-card-name">Clara Hoffmann</div>
-          <div class="team-card-role">Associate Principal</div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ==============================
-     SERVICES PAGE
-     ============================== -->
-<div id="services-page" class="page-section">
-  <section id="services">
-    <div class="services-hero">
-      <h1 class="services-hero-title">
-        <span class="line-reveal"><span class="line-reveal-inner">What we</span></span>
-        <span class="line-reveal"><span class="line-reveal-inner"><em>offer</em></span></span>
-      </h1>
-    </div>
-    <div class="services-list">
-      <div class="service-item">
-        <div class="service-header" onclick="toggleService(this)">
-          <span class="service-num">01</span>
-          <h2 class="service-title">Architecture</h2>
-          <span class="service-icon">+</span>
-        </div>
-        <div class="service-body">
-          <div class="service-body-inner">
-            <div class="service-content">
-              <div class="service-spacer"></div>
-              <p class="service-desc">From competition entry through construction administration, we provide complete architectural services for projects of any scale — private houses, cultural institutions, civic buildings, and mixed-use developments.</p>
-              <div class="service-features">
-                <span class="service-feature">Feasibility studies and site analysis</span>
-                <span class="service-feature">Concept design and scheme design</span>
-                <span class="service-feature">Planning and regulatory approvals</span>
-                <span class="service-feature">Technical design and specifications</span>
-                <span class="service-feature">Construction documentation</span>
-                <span class="service-feature">Contract administration and site observation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="service-header" onclick="toggleService(this)">
-          <span class="service-num">02</span>
-          <h2 class="service-title">Interior Architecture</h2>
-          <span class="service-icon">+</span>
-        </div>
-        <div class="service-body">
-          <div class="service-body-inner">
-            <div class="service-content">
-              <div class="service-spacer"></div>
-              <p class="service-desc">Interior architecture as a continuation of architectural thought — not decoration applied to a shell, but spatial design that begins from the inside out. Material, light, and furniture treated with the same rigour as the building envelope.</p>
-              <div class="service-features">
-                <span class="service-feature">Spatial planning and furniture layouts</span>
-                <span class="service-feature">Material and finish specifications</span>
-                <span class="service-feature">Custom joinery and built-in elements</span>
-                <span class="service-feature">Lighting design in collaboration with specialists</span>
-                <span class="service-feature">Furniture procurement and art consultation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="service-header" onclick="toggleService(this)">
-          <span class="service-num">03</span>
-          <h2 class="service-title">Urban Strategy</h2>
-          <span class="service-icon">+</span>
-        </div>
-        <div class="service-body">
-          <div class="service-body-inner">
-            <div class="service-content">
-              <div class="service-spacer"></div>
-              <p class="service-desc">Urban-scale design thinking applied to masterplans, development briefs, and neighbourhood strategies. We engage with city-making as a slow, collective enterprise that demands patience and a long view.</p>
-              <div class="service-features">
-                <span class="service-feature">Masterplan and urban framework studies</span>
-                <span class="service-feature">Development brief writing</span>
-                <span class="service-feature">Design review and quality governance</span>
-                <span class="service-feature">Public realm design</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="service-header" onclick="toggleService(this)">
-          <span class="service-num">04</span>
-          <h2 class="service-title">Research & Competition</h2>
-          <span class="service-icon">+</span>
-        </div>
-        <div class="service-body">
-          <div class="service-body-inner">
-            <div class="service-content">
-              <div class="service-spacer"></div>
-              <p class="service-desc">Speculative design, academic research, and competition entries form an important part of our practice. They allow us to test ideas without constraint — and the thinking generated feeds back directly into our built work.</p>
-              <div class="service-features">
-                <span class="service-feature">Invited and open competition entries</span>
-                <span class="service-feature">Academic and institutional research</span>
-                <span class="service-feature">Exhibition and installation design</span>
-                <span class="service-feature">Design consultancy and expert opinion</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="service-item">
-        <div class="service-header" onclick="toggleService(this)">
-          <span class="service-num">05</span>
-          <h2 class="service-title">Sustainable Design</h2>
-          <span class="service-icon">+</span>
-        </div>
-        <div class="service-body">
-          <div class="service-body-inner">
-            <div class="service-content">
-              <div class="service-spacer"></div>
-              <p class="service-desc">Passive-first design strategy, embodied carbon analysis, and whole-life performance integrated into every project from day one. We work with specialist environmental engineers to achieve targets that go beyond minimum compliance.</p>
-              <div class="service-features">
-                <span class="service-feature">Passive design strategy and climate analysis</span>
-                <span class="service-feature">Embodied carbon assessment (RIBA Stage 1–5)</span>
-                <span class="service-feature">Biophilic design and natural ventilation</span>
-                <span class="service-feature">BREEAM, Minergie, and LEED support</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ==============================
-     JOURNAL PAGE
-     ============================== -->
-<div id="journal-page" class="page-section">
-  <section id="journal">
-    <div class="journal-hero">
-      <span class="section-label reveal-up" style="color:rgba(244,242,238,0.35);margin-bottom:20px;display:flex">Ideas &amp; Writing</span>
-      <h1 class="journal-hero-title">
-        <span class="line-reveal"><span class="line-reveal-inner" style="color:var(--white)">Notes on</span></span>
-        <span class="line-reveal"><span class="line-reveal-inner" style="color:var(--white);font-style:italic">architecture.</span></span>
-      </h1>
-    </div>
-    <div class="journal-grid">
-      <div class="journal-card">
-        <div class="journal-card-visual">
-          <svg viewBox="0 0 900 390" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="900" height="390" fill="#0f1018"/>
-            <line x1="0" y1="195" x2="900" y2="195" stroke="rgba(200,190,170,0.05)" stroke-width="0.5"/>
-            <rect x="80" y="50" width="200" height="290" fill="rgba(14,16,24,0.95)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
-            <rect x="320" y="80" width="200" height="260" fill="rgba(14,16,24,0.95)" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
-            <rect x="560" y="100" width="200" height="240" fill="rgba(14,16,24,0.95)" stroke="rgba(200,190,170,0.1)" stroke-width="0.5"/>
-            <line x1="0" y1="340" x2="900" y2="340" stroke="rgba(200,190,170,0.12)" stroke-width="0.6"/>
-          </svg>
-        </div>
-        <div class="journal-card-body">
-          <p class="journal-card-tag">Essay</p>
-          <h3 class="journal-card-title">The Pleasure of the Unresolved: Notes on Incompleteness in Architecture</h3>
-          <p class="journal-card-excerpt">There is a category of building that holds something back — that refuses to fully explain itself. We argue that this quality of productive ambiguity is among the highest achievements in the discipline.</p>
-          <div class="journal-card-meta"><span>Isabelle Meier</span><span>March 2025</span><span>12 min read</span></div>
-        </div>
-      </div>
-      <div class="journal-card">
-        <div class="journal-card-visual"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#0c100a"/><circle cx="200" cy="150" r="100" fill="none" stroke="rgba(200,190,170,0.2)" stroke-width="0.7"/><circle cx="200" cy="150" r="70" fill="none" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/><circle cx="200" cy="150" r="40" fill="none" stroke="rgba(200,190,170,0.08)" stroke-width="0.4"/><line x1="200" y1="50" x2="200" y2="250" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/><line x1="100" y1="150" x2="300" y2="150" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/></svg></div>
-        <div class="journal-card-body">
-          <p class="journal-card-tag">Field notes</p>
-          <h3 class="journal-card-title">Visiting Sverre Fehn: A Second Time</h3>
-          <p class="journal-card-excerpt">A return to Fehn's Hamar Museum, ten years later, and what has changed in the intervening decade — in the building, and in us.</p>
-          <div class="journal-card-meta"><span>Tomas Varga</span><span>Jan 2025</span></div>
-        </div>
-      </div>
-      <div class="journal-card">
-        <div class="journal-card-visual"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#100c08"/><rect x="50" y="60" width="300" height="200" fill="rgba(16,12,8,0.95)" stroke="rgba(200,190,170,0.2)" stroke-width="0.6"/><line x1="50" y1="120" x2="350" y2="120" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/><line x1="50" y1="180" x2="350" y2="180" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/><line x1="200" y1="60" x2="200" y2="260" stroke="rgba(200,190,170,0.1)" stroke-width="0.4"/></svg></div>
-        <div class="journal-card-body">
-          <p class="journal-card-tag">Practice</p>
-          <h3 class="journal-card-title">On Drawing by Hand in the Age of Parametric Design</h3>
-          <p class="journal-card-excerpt">Why we still begin every project with pencil on paper — and why we believe computational tools are most powerful when they follow, not precede, drawing.</p>
-          <div class="journal-card-meta"><span>Clara Hoffmann</span><span>Nov 2024</span></div>
-        </div>
-      </div>
-      <div class="journal-card">
-        <div class="journal-card-visual"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#08100e"/><path d="M0 200 Q100 100 200 200 Q300 300 400 150" fill="none" stroke="rgba(200,190,170,0.25)" stroke-width="0.7"/><path d="M0 220 Q100 120 200 220 Q300 320 400 170" fill="none" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/><line x1="0" y1="270" x2="400" y2="270" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/></svg></div>
-        <div class="journal-card-body">
-          <p class="journal-card-tag">Landscape</p>
-          <h3 class="journal-card-title">Ground as Architecture: The Landscape of Mörschwil</h3>
-          <p class="journal-card-excerpt">How we approached the public realm around our cultural centre commission — treating the ground plane as an architectural element equal to any wall or roof.</p>
-          <div class="journal-card-meta"><span>Isabelle Meier</span><span>Sep 2024</span></div>
-        </div>
-      </div>
-      <div class="journal-card">
-        <div class="journal-card-visual"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#0e0810"/><rect x="80" y="40" width="240" height="220" fill="rgba(14,8,16,0.95)" stroke="rgba(200,190,170,0.18)" stroke-width="0.5"/><line x1="80" y1="110" x2="320" y2="110" stroke="rgba(200,190,170,0.08)" stroke-width="0.4"/><line x1="80" y1="180" x2="320" y2="180" stroke="rgba(200,190,170,0.08)" stroke-width="0.4"/><rect x="160" y="220" width="80" height="40" fill="rgba(10,6,12,0.9)" stroke="rgba(200,190,170,0.2)" stroke-width="0.4"/></svg></div>
-        <div class="journal-card-body">
-          <p class="journal-card-tag">Material</p>
-          <h3 class="journal-card-title">Raw Concrete: A Defence</h3>
-          <p class="journal-card-excerpt">Against the grain of current opinion, we make the case for béton brut as one of architecture's most humane and enduring materials — when used honestly.</p>
-          <div class="journal-card-meta"><span>Tomas Varga</span><span>Jul 2024</span></div>
-        </div>
-      </div>
-      <div class="journal-card">
-        <div class="journal-card-visual"><svg viewBox="0 0 700 525" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="700" height="525" fill="#080a08"/><rect x="0" y="0" width="350" height="525" fill="rgba(8,10,8,0.95)"/><line x1="350" y1="0" x2="350" y2="525" stroke="rgba(200,190,170,0.2)" stroke-width="0.7"/><rect x="60" y="80" width="240" height="365" fill="rgba(10,12,10,0.95)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/><rect x="400" y="120" width="240" height="285" fill="rgba(10,12,10,0.95)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/><line x1="0" y1="445" x2="700" y2="445" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/></svg></div>
-        <div class="journal-card-body">
-          <p class="journal-card-tag">Opinion</p>
-          <h3 class="journal-card-title">Why Architecture Schools Are Getting It Wrong</h3>
-          <p class="journal-card-excerpt">A critical look at contemporary architectural education — what is taught, what is ignored, and what the profession is consequently missing in its next generation.</p>
-          <div class="journal-card-meta"><span>Isabelle Meier</span><span>May 2024</span></div>
-        </div>
-      </div>
-      <div class="journal-card">
-        <div class="journal-card-visual"><svg viewBox="0 0 700 525" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="700" height="525" fill="#100e0a"/><rect x="60" y="60" width="580" height="405" fill="rgba(16,14,10,0.95)" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/><line x1="60" y1="195" x2="640" y2="195" stroke="rgba(200,190,170,0.08)" stroke-width="0.4"/><line x1="60" y1="330" x2="640" y2="330" stroke="rgba(200,190,170,0.08)" stroke-width="0.4"/><line x1="350" y1="60" x2="350" y2="465" stroke="rgba(200,190,170,0.06)" stroke-width="0.4"/></svg></div>
-        <div class="journal-card-body">
-          <p class="journal-card-tag">Interview</p>
-          <h3 class="journal-card-title">A Conversation with Peter Märkli on the Nature of Form</h3>
-          <p class="journal-card-excerpt">We sit down with the Zurich architect whose influence on our practice has been profound — to discuss proportion, craft, and the discipline of saying no.</p>
-          <div class="journal-card-meta"><span>Tabeen Atelier</span><span>Feb 2024</span><span>18 min read</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ==============================
-     CONTACT PAGE
-     ============================== -->
-<div id="contact-page" class="page-section">
-  <section id="contact">
-    <div class="contact-hero">
-      <span class="section-label reveal-up" style="color:rgba(244,242,238,0.3);margin-bottom:24px;display:flex">Get in touch</span>
-      <h1 class="contact-hero-title">
-        <span class="line-reveal"><span class="line-reveal-inner">Let's make</span></span>
-        <span class="line-reveal"><span class="line-reveal-inner">something <em>lasting</em></span></span>
-        <span class="line-reveal"><span class="line-reveal-inner">together.</span></span>
-      </h1>
-    </div>
-    <div class="contact-body">
-      <div class="contact-form-col">
-        <form onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="cf-name">Full name</label>
-              <input type="text" id="cf-name" placeholder="Your name" autocomplete="name">
-            </div>
-            <div class="form-field">
-              <label for="cf-email">Email address</label>
-              <input type="email" id="cf-email" placeholder="you@example.com" autocomplete="email">
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="cf-org">Organisation</label>
-            <input type="text" id="cf-org" placeholder="Optional">
-          </div>
-          <div class="form-field">
-            <label for="cf-type">Project type</label>
-            <select id="cf-type">
-              <option value="" disabled selected>Select a typology</option>
-              <option>Private Residence</option>
-              <option>Cultural Institution</option>
-              <option>Civic Building</option>
-              <option>Mixed-use Development</option>
-              <option>Interior Architecture</option>
-              <option>Urban Strategy</option>
-              <option>Competition</option>
-              <option>Research Collaboration</option>
-              <option>Other enquiry</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="cf-budget">Approximate budget</label>
-            <select id="cf-budget">
-              <option value="" disabled selected>Select a range</option>
-              <option>Under CHF 500K</option>
-              <option>CHF 500K – 1M</option>
-              <option>CHF 1M – 5M</option>
-              <option>CHF 5M – 20M</option>
-              <option>Over CHF 20M</option>
-              <option>Not yet defined</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="cf-message">Tell us about the project</label>
-            <textarea id="cf-message" rows="5" placeholder="Site, programme, timeline, and anything else you think we should know…"></textarea>
-          </div>
-          <div class="form-submit">
-            <button type="submit" class="btn-submit"><span>Send enquiry</span></button>
-          </div>
-          <div id="formSuccess" style="display:none;margin-top:20px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--accent)">
-            Thank you — we will respond within two working days.
-          </div>
-        </form>
-      </div>
-      <div class="contact-info-col">
-        <div class="contact-info-item reveal-up">
-          <div class="contact-info-label">Email</div>
-          <div class="contact-info-val"><a href="mailto:studio@atelierform.com">studio@atelierform.com</a></div>
-        </div>
-        <div class="contact-info-item reveal-up">
-          <div class="contact-info-label">Zürich Office</div>
-          <div class="contact-info-val">Talstrasse 58, 4th Floor<br>8001 Zürich, Switzerland</div>
-        </div>
-        <div class="contact-info-item reveal-up">
-          <div class="contact-info-label">London Office</div>
-          <div class="contact-info-val">24 Sekforde Street<br>London EC1R 0HA, UK</div>
-        </div>
-        <div class="contact-info-item reveal-up">
-          <div class="contact-info-label">Tokyo Office</div>
-          <div class="contact-info-val">2-14-8 Tomigaya<br>Shibuya-ku, Tokyo</div>
-        </div>
-        <div class="contact-info-item reveal-up">
-          <div class="contact-info-label">New business</div>
-          <div class="contact-info-val"><a href="mailto:new@atelierform.com">new@atelierform.com</a></div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-map" aria-label="Abstract location reference">
-      <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1200" height="300" fill="#0c0e14"/>
-        <defs>
-          <pattern id="mapgrid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(180,200,240,0.05)" stroke-width="0.5"/>
-          </pattern>
-        </defs>
-        <rect width="1200" height="300" fill="url(#mapgrid)"/>
-        <!-- Simplified map lines -->
-        <path d="M0 180 Q200 160 400 170 Q600 180 800 160 Q1000 140 1200 155" fill="none" stroke="rgba(200,190,170,0.08)" stroke-width="0.6"/>
-        <path d="M0 220 Q300 200 600 210 Q900 220 1200 200" fill="none" stroke="rgba(200,190,170,0.05)" stroke-width="0.5"/>
-        <line x1="0" y1="120" x2="1200" y2="120" stroke="rgba(200,190,170,0.04)" stroke-width="0.4"/>
-        <!-- Location markers -->
-        <circle cx="460" cy="165" r="4" fill="none" stroke="var(--accent)" stroke-width="0.8"/>
-        <circle cx="460" cy="165" r="1.5" fill="var(--accent)"/>
-        <text x="468" y="160" fill="rgba(200,190,170,0.4)" font-size="8" font-family="'DM Mono',monospace" letter-spacing="2">ZÜRICH</text>
-        <circle cx="310" cy="140" r="4" fill="none" stroke="rgba(200,190,170,0.3)" stroke-width="0.8"/>
-        <circle cx="310" cy="140" r="1.5" fill="rgba(200,190,170,0.4)"/>
-        <text x="318" y="135" fill="rgba(200,190,170,0.3)" font-size="8" font-family="'DM Mono',monospace" letter-spacing="2">LONDON</text>
-        <circle cx="1020" cy="130" r="4" fill="none" stroke="rgba(200,190,170,0.3)" stroke-width="0.8"/>
-        <circle cx="1020" cy="130" r="1.5" fill="rgba(200,190,170,0.4)"/>
-        <text x="1028" y="125" fill="rgba(200,190,170,0.3)" font-size="8" font-family="'DM Mono',monospace" letter-spacing="2">TOKYO</text>
-      </svg>
-    </div>
-  </section>
-</div>
 
 <!-- FOOTER (shared) -->
 <footer class="footer">
@@ -1139,22 +470,22 @@
   <div>
     <div class="footer-col-title">Practice</div>
     <ul class="footer-col-links">
-      <li><a href="#home" data-page="home">Home</a></li>
-      <li><a href="#projects" data-page="projects">Projects</a></li>
-      <li><a href="#studio" data-page="studio">Studio</a></li>
-      <li><a href="#services" data-page="services">Services</a></li>
-      <li><a href="#journal" data-page="journal">Journal</a></li>
-      <li><a href="#contact" data-page="contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
   <div>
     <div class="footer-col-title">Typologies</div>
     <ul class="footer-col-links">
-      <li><a href="#projects" data-page="projects">Residential</a></li>
-      <li><a href="#projects" data-page="projects">Cultural</a></li>
-      <li><a href="#projects" data-page="projects">Civic</a></li>
-      <li><a href="#projects" data-page="projects">Mixed-use</a></li>
-      <li><a href="#projects" data-page="projects">Interior</a></li>
+      <li><a href="projects.html">Residential</a></li>
+      <li><a href="projects.html">Cultural</a></li>
+      <li><a href="projects.html">Civic</a></li>
+      <li><a href="projects.html">Mixed-use</a></li>
+      <li><a href="projects.html">Interior</a></li>
     </ul>
   </div>
   <div>

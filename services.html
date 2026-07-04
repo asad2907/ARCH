@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tabeen Atelier — A luxury architecture studio creating spaces of refined permanence. Projects spanning private residences, cultural institutions, and civic architecture.">
+<meta name="keywords" content="architecture studio, luxury design, residential architecture, cultural buildings, atelier form">
+<meta property="og:title" content="Tabeen Atelier — Architecture Studio">
+<meta property="og:description" content="We design spaces of refined permanence.">
+<meta property="og:type" content="website">
+<title>Services - Tabeen Atelier</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<!-- GSAP + Lenis via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="services">
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor">
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-label" id="cursorLabel"></div>
+</div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-wordmark">
+    <span class="loader-wordmark-inner">Tabeen Atelier</span>
+  </div>
+  <div class="loader-sub">Architecture Studio — Est. MMX</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">Tabeen Atelier<sup>©</sup></a>
+  <div class="nav-center">
+<a href="index.html"     class="nav-link">Home</a>
+<a href="projects.html" class="nav-link">Projects</a>
+<a href="about.html"   class="nav-link">About</a>
+<a href="services.html" class="nav-link active">Services</a>
+<a href="journal.html"  class="nav-link">Journal</a>
+<a href="contact.html"  class="nav-link">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="contact.html" class="nav-enquire">Enquire</a>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-links">
+    <a href="index.html"     class="mobile-menu-link"><span class="mobile-menu-link-inner">Home</span></a>
+    <a href="projects.html" class="mobile-menu-link"><span class="mobile-menu-link-inner">Projects</span></a>
+    <a href="about.html"   class="mobile-menu-link"><span class="mobile-menu-link-inner">Studio</span></a>
+    <a href="services.html" class="mobile-menu-link"><span class="mobile-menu-link-inner">Services</span></a>
+    <a href="journal.html"  class="mobile-menu-link"><span class="mobile-menu-link-inner">Journal</span></a>
+    <a href="contact.html"  class="mobile-menu-link"><span class="mobile-menu-link-inner">Contact</span></a>
+  </div>
+  <div class="mobile-menu-bottom">
+    <div class="mobile-menu-contact">
+      <div>Zürich / London / Tokyo</div>
+      <div style="margin-top:4px;color:rgba(244,242,238,0.45)">studio@atelierform.com</div>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;color:rgba(244,242,238,0.2)">© 2026</div>
+  </div>
+</div>
+
+<!-- ==============================
+     SERVICES PAGE
+     ============================== -->
+<div id="services-page" class="page-section active">
+  <section id="services">
+    <div class="services-hero">
+      <h1 class="services-hero-title">
+        <span class="line-reveal"><span class="line-reveal-inner">What we</span></span>
+        <span class="line-reveal"><span class="line-reveal-inner"><em>offer</em></span></span>
+      </h1>
+    </div>
+    <div class="services-list">
+      <div class="service-item">
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-num">01</span>
+          <h2 class="service-title">Architecture</h2>
+          <span class="service-icon">+</span>
+        </div>
+        <div class="service-body">
+          <div class="service-body-inner">
+            <div class="service-content">
+              <div class="service-spacer"></div>
+              <p class="service-desc">From competition entry through construction administration, we provide complete architectural services for projects of any scale — private houses, cultural institutions, civic buildings, and mixed-use developments.</p>
+              <div class="service-features">
+                <span class="service-feature">Feasibility studies and site analysis</span>
+                <span class="service-feature">Concept design and scheme design</span>
+                <span class="service-feature">Planning and regulatory approvals</span>
+                <span class="service-feature">Technical design and specifications</span>
+                <span class="service-feature">Construction documentation</span>
+                <span class="service-feature">Contract administration and site observation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-num">02</span>
+          <h2 class="service-title">Interior Architecture</h2>
+          <span class="service-icon">+</span>
+        </div>
+        <div class="service-body">
+          <div class="service-body-inner">
+            <div class="service-content">
+              <div class="service-spacer"></div>
+              <p class="service-desc">Interior architecture as a continuation of architectural thought — not decoration applied to a shell, but spatial design that begins from the inside out. Material, light, and furniture treated with the same rigour as the building envelope.</p>
+              <div class="service-features">
+                <span class="service-feature">Spatial planning and furniture layouts</span>
+                <span class="service-feature">Material and finish specifications</span>
+                <span class="service-feature">Custom joinery and built-in elements</span>
+                <span class="service-feature">Lighting design in collaboration with specialists</span>
+                <span class="service-feature">Furniture procurement and art consultation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-num">03</span>
+          <h2 class="service-title">Urban Strategy</h2>
+          <span class="service-icon">+</span>
+        </div>
+        <div class="service-body">
+          <div class="service-body-inner">
+            <div class="service-content">
+              <div class="service-spacer"></div>
+              <p class="service-desc">Urban-scale design thinking applied to masterplans, development briefs, and neighbourhood strategies. We engage with city-making as a slow, collective enterprise that demands patience and a long view.</p>
+              <div class="service-features">
+                <span class="service-feature">Masterplan and urban framework studies</span>
+                <span class="service-feature">Development brief writing</span>
+                <span class="service-feature">Design review and quality governance</span>
+                <span class="service-feature">Public realm design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-num">04</span>
+          <h2 class="service-title">Research & Competition</h2>
+          <span class="service-icon">+</span>
+        </div>
+        <div class="service-body">
+          <div class="service-body-inner">
+            <div class="service-content">
+              <div class="service-spacer"></div>
+              <p class="service-desc">Speculative design, academic research, and competition entries form an important part of our practice. They allow us to test ideas without constraint — and the thinking generated feeds back directly into our built work.</p>
+              <div class="service-features">
+                <span class="service-feature">Invited and open competition entries</span>
+                <span class="service-feature">Academic and institutional research</span>
+                <span class="service-feature">Exhibition and installation design</span>
+                <span class="service-feature">Design consultancy and expert opinion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-num">05</span>
+          <h2 class="service-title">Sustainable Design</h2>
+          <span class="service-icon">+</span>
+        </div>
+        <div class="service-body">
+          <div class="service-body-inner">
+            <div class="service-content">
+              <div class="service-spacer"></div>
+              <p class="service-desc">Passive-first design strategy, embodied carbon analysis, and whole-life performance integrated into every project from day one. We work with specialist environmental engineers to achieve targets that go beyond minimum compliance.</p>
+              <div class="service-features">
+                <span class="service-feature">Passive design strategy and climate analysis</span>
+                <span class="service-feature">Embodied carbon assessment (RIBA Stage 1–5)</span>
+                <span class="service-feature">Biophilic design and natural ventilation</span>
+                <span class="service-feature">BREEAM, Minergie, and LEED support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER (shared) -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">Tabeen Atelier<sup style="font-size:10px;letter-spacing:0;opacity:0.4"> ©</sup></div>
+    <p class="footer-tagline">Architecture Studio<br>Founded 2010<br>Zürich · London · Tokyo</p>
+  </div>
+  <div>
+    <div class="footer-col-title">Practice</div>
+    <ul class="footer-col-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Typologies</div>
+    <ul class="footer-col-links">
+      <li><a href="projects.html">Residential</a></li>
+      <li><a href="projects.html">Cultural</a></li>
+      <li><a href="projects.html">Civic</a></li>
+      <li><a href="projects.html">Mixed-use</a></li>
+      <li><a href="projects.html">Interior</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Connect</div>
+    <ul class="footer-col-links">
+      <li><a href="mailto:studio@atelierform.com">studio@atelierform.com</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Archinect</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-copy">© 2026 Tabeen Atelier. All rights reserved.</span>
+  <span class="footer-copy">Privacy · Legal · Cookies</span>
+</div>
+
+<!-- ============================
+     SCRIPTS
+     ============================ -->
+<script src="js/script.js"></script>
+</body>
+</html>

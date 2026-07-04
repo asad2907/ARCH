@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tabeen Atelier — A luxury architecture studio creating spaces of refined permanence. Projects spanning private residences, cultural institutions, and civic architecture.">
+<meta name="keywords" content="architecture studio, luxury design, residential architecture, cultural buildings, atelier form">
+<meta property="og:title" content="Tabeen Atelier — Architecture Studio">
+<meta property="og:description" content="We design spaces of refined permanence.">
+<meta property="og:type" content="website">
+<title>About - Tabeen Atelier</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<!-- GSAP + Lenis via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="studio">
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor">
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-label" id="cursorLabel"></div>
+</div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-wordmark">
+    <span class="loader-wordmark-inner">Tabeen Atelier</span>
+  </div>
+  <div class="loader-sub">Architecture Studio — Est. MMX</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">Tabeen Atelier<sup>©</sup></a>
+  <div class="nav-center">
+<a href="index.html"     class="nav-link">Home</a>
+<a href="projects.html" class="nav-link">Projects</a>
+<a href="about.html"   class="nav-link active">About</a>
+<a href="services.html" class="nav-link">Services</a>
+<a href="journal.html"  class="nav-link">Journal</a>
+<a href="contact.html"  class="nav-link">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="contact.html" class="nav-enquire">Enquire</a>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-links">
+    <a href="index.html"     class="mobile-menu-link"><span class="mobile-menu-link-inner">Home</span></a>
+    <a href="projects.html" class="mobile-menu-link"><span class="mobile-menu-link-inner">Projects</span></a>
+    <a href="about.html"   class="mobile-menu-link"><span class="mobile-menu-link-inner">Studio</span></a>
+    <a href="services.html" class="mobile-menu-link"><span class="mobile-menu-link-inner">Services</span></a>
+    <a href="journal.html"  class="mobile-menu-link"><span class="mobile-menu-link-inner">Journal</span></a>
+    <a href="contact.html"  class="mobile-menu-link"><span class="mobile-menu-link-inner">Contact</span></a>
+  </div>
+  <div class="mobile-menu-bottom">
+    <div class="mobile-menu-contact">
+      <div>Zürich / London / Tokyo</div>
+      <div style="margin-top:4px;color:rgba(244,242,238,0.45)">studio@atelierform.com</div>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;color:rgba(244,242,238,0.2)">© 2026</div>
+  </div>
+</div>
+
+<!-- ==============================
+     STUDIO PAGE
+     ============================== -->
+<div id="studio-page" class="page-section active">
+  <section id="studio">
+    <div class="studio-hero">
+      <div class="studio-hero-left">
+        <p class="feat-proj-tag reveal-up" style="margin-bottom:20px">About the practice</p>
+        <h1 class="studio-hero-title reveal-up">The studio behind the form.</h1>
+        <p class="studio-hero-subtitle reveal-up">Architecture as a sustained act of attention.</p>
+        <p class="studio-hero-body reveal-up">Founded in 2010 by Isabelle Meier and Tomas Varga, Tabeen Atelier is a practice built around the conviction that every building should be the best possible version of itself — not the most innovative, not the most profitable, but the most resolved.</p>
+      </div>
+      <div class="studio-hero-right">
+        <svg viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="700" height="700" fill="#161210"/>
+          <line x1="0" y1="350" x2="700" y2="350" stroke="rgba(200,190,170,0.06)" stroke-width="0.5"/>
+          <line x1="350" y1="0" x2="350" y2="700" stroke="rgba(200,190,170,0.06)" stroke-width="0.5"/>
+          <!-- Architectural plan —  ground floor -->
+          <rect x="80" y="80" width="540" height="540" fill="none" stroke="rgba(200,190,170,0.2)" stroke-width="0.8"/>
+          <!-- Rooms -->
+          <rect x="80" y="80" width="260" height="180" fill="rgba(22,18,16,0.9)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
+          <rect x="340" y="80" width="280" height="180" fill="rgba(22,18,16,0.9)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
+          <rect x="80" y="260" width="180" height="360" fill="rgba(22,18,16,0.9)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
+          <rect x="260" y="260" width="360" height="360" fill="rgba(22,18,16,0.9)" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
+          <!-- Staircase -->
+          <rect x="230" y="260" width="30" height="30" fill="rgba(200,190,170,0.05)" stroke="rgba(200,190,170,0.2)" stroke-width="0.4"/>
+          <line x1="230" y1="265" x2="260" y2="265" stroke="rgba(200,190,170,0.12)" stroke-width="0.4"/>
+          <line x1="230" y1="271" x2="260" y2="271" stroke="rgba(200,190,170,0.12)" stroke-width="0.4"/>
+          <line x1="230" y1="277" x2="260" y2="277" stroke="rgba(200,190,170,0.12)" stroke-width="0.4"/>
+          <line x1="230" y1="283" x2="260" y2="283" stroke="rgba(200,190,170,0.12)" stroke-width="0.4"/>
+          <!-- Door swings -->
+          <path d="M80 215 A40 40 0 0 1 120 175" fill="none" stroke="rgba(200,190,170,0.18)" stroke-width="0.4"/>
+          <path d="M80 215 L80 175" fill="none" stroke="rgba(200,190,170,0.18)" stroke-width="0.4"/>
+          <path d="M340 215 A40 40 0 0 1 380 175" fill="none" stroke="rgba(200,190,170,0.18)" stroke-width="0.4"/>
+          <!-- North arrow -->
+          <circle cx="620" cy="120" r="18" fill="none" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
+          <polygon points="620,100 615,124 620,120 625,124" fill="none" stroke="rgba(200,190,170,0.4)" stroke-width="0.5"/>
+          <polygon points="620,100 615,124 620,120 625,124" fill="rgba(200,190,170,0.15)"/>
+          <text x="620" y="144" text-anchor="middle" fill="rgba(200,190,170,0.3)" font-size="8" font-family="'DM Mono', monospace">N</text>
+          <!-- Scale bar -->
+          <line x1="80" y1="650" x2="180" y2="650" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
+          <line x1="80" y1="645" x2="80" y2="655" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
+          <line x1="130" y1="645" x2="130" y2="655" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
+          <line x1="180" y1="645" x2="180" y2="655" stroke="rgba(200,190,170,0.2)" stroke-width="0.5"/>
+          <text x="130" y="665" text-anchor="middle" fill="rgba(200,190,170,0.2)" font-size="8" font-family="'DM Mono', monospace" letter-spacing="2">5m</text>
+          <text x="400" y="665" text-anchor="middle" fill="rgba(200,190,170,0.12)" font-size="8" font-family="'DM Mono', monospace" letter-spacing="2">FLOOR PLAN — GROUND LEVEL</text>
+        </svg>
+      </div>
+    </div>
+    <div class="studio-philosophy">
+      <h2 class="studio-philosophy-title reveal-up">Our principles</h2>
+      <div class="studio-philosophy-content">
+        <p class="studio-philosophy-para reveal-up">
+          We believe that <strong>architecture is first and foremost a spatial art</strong> — not a technical exercise, not an investment vehicle, not a medium for self-expression. Buildings should make life better for the people who inhabit them. This belief guides every decision we make, from site strategy to door handle selection.
+        </p>
+        <p class="studio-philosophy-para reveal-up">
+          The studio is intentionally <strong>small</strong>. We take on twelve to sixteen projects per year. Every project is led by a founding principal from inception to completion. We do not delegate creative responsibility to junior staff, and we do not take on more work than we can do well.
+        </p>
+        <p class="studio-philosophy-para reveal-up">
+          We are <strong>material thinkers</strong>. Concrete, stone, timber, glass — chosen not for fashion but for longevity, tactility, and the capacity to age gracefully. We resist the trend toward novelty. A building that looks extraordinary on the day it opens but unremarkable ten years later has failed in its primary purpose.
+        </p>
+        <p class="studio-philosophy-para reveal-up">
+          <strong>Sustainability is not a feature.</strong> It is a precondition. Every project is designed from the outset to reduce energy demand, respond to its climate, and extend its useful life as long as possible.
+        </p>
+      </div>
+    </div>
+    <div class="studio-team">
+      <h2 class="studio-team-title reveal-up">The team</h2>
+      <div class="team-grid">
+        <div class="team-card reveal-up">
+          <div class="team-card-portrait">
+            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="400" fill="#12100e"/>
+              <rect x="0" y="180" width="300" height="220" fill="#0e0c0a"/>
+              <!-- Abstract portrait -->
+              <circle cx="150" cy="130" r="60" fill="rgba(30,25,20,0.9)" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
+              <ellipse cx="150" cy="320" rx="100" ry="60" fill="rgba(25,20,16,0.9)"/>
+              <line x1="0" y1="395" x2="300" y2="395" stroke="rgba(200,190,170,0.15)" stroke-width="0.5"/>
+            </svg>
+          </div>
+          <div class="team-card-name">Isabelle Meier</div>
+          <div class="team-card-role">Founding Principal</div>
+        </div>
+        <div class="team-card reveal-up">
+          <div class="team-card-portrait">
+            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="400" fill="#100e0c"/>
+              <rect x="0" y="160" width="300" height="240" fill="#0c0a08"/>
+              <circle cx="150" cy="120" r="58" fill="rgba(28,22,18,0.9)" stroke="rgba(200,190,170,0.1)" stroke-width="0.5"/>
+              <ellipse cx="150" cy="330" rx="110" ry="65" fill="rgba(22,18,14,0.9)"/>
+              <line x1="0" y1="395" x2="300" y2="395" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
+            </svg>
+          </div>
+          <div class="team-card-name">Tomas Varga</div>
+          <div class="team-card-role">Founding Principal</div>
+        </div>
+        <div class="team-card reveal-up">
+          <div class="team-card-portrait">
+            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+              <rect width="300" height="400" fill="#0e100e"/>
+              <rect x="0" y="170" width="300" height="230" fill="#0a0c0a"/>
+              <circle cx="150" cy="125" r="56" fill="rgba(22,28,22,0.9)" stroke="rgba(200,190,170,0.1)" stroke-width="0.5"/>
+              <ellipse cx="150" cy="325" rx="105" ry="62" fill="rgba(18,22,18,0.9)"/>
+              <line x1="0" y1="395" x2="300" y2="395" stroke="rgba(200,190,170,0.12)" stroke-width="0.5"/>
+            </svg>
+          </div>
+          <div class="team-card-name">Clara Hoffmann</div>
+          <div class="team-card-role">Associate Principal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER (shared) -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">Tabeen Atelier<sup style="font-size:10px;letter-spacing:0;opacity:0.4"> ©</sup></div>
+    <p class="footer-tagline">Architecture Studio<br>Founded 2010<br>Zürich · London · Tokyo</p>
+  </div>
+  <div>
+    <div class="footer-col-title">Practice</div>
+    <ul class="footer-col-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Typologies</div>
+    <ul class="footer-col-links">
+      <li><a href="projects.html">Residential</a></li>
+      <li><a href="projects.html">Cultural</a></li>
+      <li><a href="projects.html">Civic</a></li>
+      <li><a href="projects.html">Mixed-use</a></li>
+      <li><a href="projects.html">Interior</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Connect</div>
+    <ul class="footer-col-links">
+      <li><a href="mailto:studio@atelierform.com">studio@atelierform.com</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Archinect</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-copy">© 2026 Tabeen Atelier. All rights reserved.</span>
+  <span class="footer-copy">Privacy · Legal · Cookies</span>
+</div>
+
+<!-- ============================
+     SCRIPTS
+     ============================ -->
+<script src="js/script.js"></script>
+</body>
+</html>
