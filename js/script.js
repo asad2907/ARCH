@@ -2,21 +2,32 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 // ===== LOADER =====
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const loader = document.getElementById('loader');
-    gsap.to(loader, {
-      yPercent: -100,
-      duration: 0.9,
-      ease: 'power3.inOut',
-      delay: 0.2,
-      onComplete: () => {
-        loader.style.display = 'none';
-        initAnimations();
-      }
-    });
-  }, 1600);
-});
+const loader = document.getElementById('loader');
+const shouldShowLoader = document.documentElement.classList.contains('show-loader');
+
+if (shouldShowLoader) {
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      gsap.to(loader, {
+        yPercent: -100,
+        duration: 0.9,
+        ease: 'power3.inOut',
+        delay: 0.2,
+        onComplete: () => {
+          loader.style.display = 'none';
+          document.documentElement.classList.remove('show-loader');
+          initAnimations();
+        }
+      });
+    }, 1600);
+  });
+} else {
+  loader.style.display = 'none';
+  requestAnimationFrame(() => {
+    document.documentElement.classList.remove('seamless-entry');
+    initAnimations();
+  });
+}
 
 // ===== CUSTOM CURSOR =====
 const cursor = document.getElementById('cursor');
@@ -58,6 +69,31 @@ document.querySelectorAll('a, button, .project-card, .h-scroll-item, .journal-ca
 
 // ===== PAGE NAVIGATION =====
 const currentPage = document.body.dataset.page || 'home';
+
+// Keep true multi-page navigation while giving internal links a composed exit.
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href]');
+  if (!link || event.defaultPrevented || event.button !== 0) return;
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  if (link.target === '_blank' || link.hasAttribute('download')) return;
+
+  const destination = new URL(link.href, window.location.href);
+  if (destination.origin !== window.location.origin) return;
+  if (destination.href === window.location.href || destination.hash) return;
+
+  event.preventDefault();
+  closeMobileMenu();
+  document.body.classList.add('page-leaving');
+  setTimeout(() => {
+    window.location.href = destination.href;
+  }, 380);
+});
+
+// Restore pages returned from the browser's back-forward cache.
+window.addEventListener('pageshow', () => {
+  document.body.classList.remove('page-leaving');
+  document.documentElement.classList.remove('seamless-entry');
+});
 
 // ===== MOBILE MENU =====
 const menuBtn  = document.getElementById('menuBtn');
