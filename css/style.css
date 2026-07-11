@@ -1744,6 +1744,13 @@ a { color: inherit; text-decoration: none; }
   background: var(--dark-mid);
 }
 
+.h-scroll-item-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .h-scroll-item-visual svg {
   width: 100%; height: 100%;
   transform: scale(1.05);
