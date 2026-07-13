@@ -81,7 +81,7 @@ document.addEventListener('click', event => {
 
   if (destination.origin !== window.location.origin) return;
 
-  window.location.href = destination.href;
+  window.location.assign(destination.href);
 });
 
 // Restore pages returned from the browser's back-forward cache.
