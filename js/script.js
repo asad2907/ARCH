@@ -230,30 +230,56 @@ function initHeroParallax() {
 // ===== HORIZONTAL SCROLL DRAG =====
 function initHScrollDrag() {
   const tracks = document.querySelectorAll('.h-scroll-track');
+
   tracks.forEach(track => {
     let isDown = false, startX, scrollLeft;
     const wrap = track.parentElement;
 
+    // Desktop
     wrap.addEventListener('mousedown', e => {
       isDown = true;
       wrap.style.cursor = 'grabbing';
       startX = e.pageX - wrap.offsetLeft;
       scrollLeft = wrap.scrollLeft;
     });
-    wrap.addEventListener('mouseleave', () => { isDown = false; wrap.style.cursor = 'grab'; });
-    wrap.addEventListener('mouseup', () => { isDown = false; wrap.style.cursor = 'grab'; });
+
+    wrap.addEventListener('mouseleave', () => {
+      isDown = false;
+      wrap.style.cursor = 'grab';
+    });
+
+    wrap.addEventListener('mouseup', () => {
+      isDown = false;
+      wrap.style.cursor = 'grab';
+    });
+
     wrap.addEventListener('mousemove', e => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - wrap.offsetLeft;
       wrap.scrollLeft = scrollLeft - (x - startX) * 1.4;
     });
-wrap.style.cursor = 'grab';
-wrap.style.overflowX = 'auto';
-wrap.style.scrollbarWidth = 'none';
-wrap.style.webkitOverflowScrolling = 'touch';
-wrap.style.touchAction = 'pan-x';
-});
+
+    // Mobile
+    let touchStartX = 0;
+    let touchScrollLeft = 0;
+
+    wrap.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+      touchScrollLeft = wrap.scrollLeft;
+    }, { passive: true });
+
+    wrap.addEventListener('touchmove', e => {
+      const x = e.touches[0].clientX;
+      wrap.scrollLeft = touchScrollLeft - (x - touchStartX);
+    }, { passive: true });
+
+    wrap.style.cursor = 'grab';
+    wrap.style.overflowX = 'auto';
+    wrap.style.scrollbarWidth = 'none';
+    wrap.style.webkitOverflowScrolling = 'touch';
+    wrap.style.touchAction = 'pan-x';
+  });
 }
 
 // ===== SERVICES ACCORDION =====
