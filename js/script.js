@@ -332,3 +332,8 @@ document.querySelectorAll('a[href^="#"]:not([data-page])').forEach(a => {
 window.addEventListener('scroll', () => {
   initRevealObserver();
 }, { passive: true, once: true });
+window.addEventListener('pageshow', function (event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+});
