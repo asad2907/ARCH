@@ -81,7 +81,8 @@ document.addEventListener('click', event => {
 
   if (destination.origin !== window.location.origin) return;
 
-  window.location.href = destination.href;
+  closeMobileMenu();
+window.location.href = destination.href;
 });
 
 // Restore pages returned from the browser's back-forward cache.
