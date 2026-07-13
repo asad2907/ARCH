@@ -629,15 +629,15 @@ a { color: inherit; text-decoration: none; }
 }
 
 .feat-proj-visual {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .feat-proj-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 .feat-proj-svg-wrap {
   width: 100%;
