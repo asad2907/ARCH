@@ -1749,7 +1749,12 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 16px;
   background: var(--dark-mid);
 }
-
+.h-scroll-item-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 .h-scroll-item-visual img {
     width: 100%;
     height: 100%;
