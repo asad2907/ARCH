@@ -248,10 +248,12 @@ function initHScrollDrag() {
       const x = e.pageX - wrap.offsetLeft;
       wrap.scrollLeft = scrollLeft - (x - startX) * 1.4;
     });
-    wrap.style.cursor = 'grab';
-    wrap.style.overflowX = 'auto';
-    wrap.style.scrollbarWidth = 'none';
-  });
+wrap.style.cursor = 'grab';
+wrap.style.overflowX = 'auto';
+wrap.style.scrollbarWidth = 'none';
+wrap.style.webkitOverflowScrolling = 'touch';
+wrap.style.touchAction = 'pan-x';
+});
 }
 
 // ===== SERVICES ACCORDION =====
