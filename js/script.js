@@ -1,11 +1,34 @@
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// ===== LOADER =====
+// ===== LOADER / PAGE REVEAL =====
 const loader = document.getElementById('loader');
+
+// Tracks whether the entrance animations have run for THIS script execution.
+// Because the back-forward cache preserves JS state, this flag survives a
+// bfcache restore and lets us tell "mid loader intro" apart from "already shown".
+let animationsStarted = false;
+
+function startAnimationsOnce() {
+  if (animationsStarted) return;
+  animationsStarted = true;
+  initAnimations();
+}
+
+// Single source of truth for making the page visible. Whatever path we arrive
+// through (first-visit loader, seamless in-session entry, or a Safari bfcache
+// restore), this guarantees the body is shown and the loader is gone. It is the
+// safety net that prevents content from ever being stuck at opacity:0.
+function revealPage() {
+  document.documentElement.classList.remove('seamless-entry', 'show-loader');
+  document.body.classList.remove('page-leaving');
+  if (loader) loader.style.display = 'none';
+  startAnimationsOnce();
+}
+
 const shouldShowLoader = document.documentElement.classList.contains('show-loader');
 
-if (shouldShowLoader) {
+if (shouldShowLoader && loader) {
   window.addEventListener('load', () => {
     setTimeout(() => {
       gsap.to(loader, {
@@ -13,20 +36,20 @@ if (shouldShowLoader) {
         duration: 0.9,
         ease: 'power3.inOut',
         delay: 0.2,
-        onComplete: () => {
-          loader.style.display = 'none';
-          document.documentElement.classList.remove('show-loader');
-          initAnimations();
-        }
+        onComplete: revealPage
       });
     }, 1600);
   });
+  // Failsafe: if the 'load' event is delayed or never fires (a stalled font or
+  // GSAP CDN request on Safari), still reveal so the black loader can't hang.
+  setTimeout(revealPage, 4200);
 } else {
-  loader.style.display = 'none';
-  requestAnimationFrame(() => {
-    document.documentElement.classList.remove('seamless-entry');
-    initAnimations();
-  });
+  // Seamless in-session navigation. Reveal on the next frame for the fade-in,
+  // but never depend on requestAnimationFrame alone: iOS Safari throttles rAF
+  // during/after navigation, which was leaving body { opacity: 0 } and showing
+  // stale/blank content. The timeout is a guaranteed fallback.
+  requestAnimationFrame(revealPage);
+  setTimeout(revealPage, 350);
 }
 
 // ===== CUSTOM CURSOR =====
@@ -70,24 +93,33 @@ document.querySelectorAll('a, button, .project-card, .h-scroll-item, .journal-ca
 // ===== PAGE NAVIGATION =====
 const currentPage = document.body.dataset.page || 'home';
 
-// Keep true multi-page navigation while giving internal links a composed exit.
-document.addEventListener('click', event => {
-  const link = event.target.closest('a[href]');
-  if (!link) return;
+// Internal links now navigate natively via their href. We previously called
+// window.location.assign() on every click WITHOUT event.preventDefault(), which
+// triggered a SECOND, redundant navigation to the same URL. On iOS/iPadOS Safari
+// that duplicate navigation interfered with the back-forward cache and produced
+// inconsistent loads. Native anchor navigation is simpler and bfcache-friendly.
 
-  if (link.target === '_blank' || link.hasAttribute('download')) return;
-
-  const destination = new URL(link.href, window.location.href);
-
-  if (destination.origin !== window.location.origin) return;
-
-  window.location.assign(destination.href);
-});
-
-// Restore pages returned from the browser's back-forward cache.
-window.addEventListener('pageshow', () => {
+// Restore pages served from the back-forward cache. On a bfcache restore the
+// page's scripts do NOT re-execute, so this handler is effectively the only code
+// that runs and it must return the page to a correct, visible state.
+//
+// We deliberately reveal when `event.persisted` OR `animationsStarted` is true,
+// instead of trusting `event.persisted` alone: that flag is an unreliable
+// false-negative on iOS/iPadOS Safari, which was the core cause of the stale
+// content. Using the persisted JS state as a secondary signal means a restored
+// page is always re-shown, while a genuine first load still lets the loader
+// intro play (animationsStarted is still false at that point).
+window.addEventListener('pageshow', (event) => {
   document.body.classList.remove('page-leaving');
-  document.documentElement.classList.remove('seamless-entry');
+
+  if (event.persisted || animationsStarted) {
+    revealPage();
+    // Re-sync scroll-driven state and reveal anything not yet shown.
+    if (typeof ScrollTrigger !== 'undefined' && ScrollTrigger.refresh) {
+      ScrollTrigger.refresh();
+    }
+    initRevealObserver();
+  }
 });
 
 // ===== MOBILE MENU =====
@@ -332,8 +364,3 @@ document.querySelectorAll('a[href^="#"]:not([data-page])').forEach(a => {
 window.addEventListener('scroll', () => {
   initRevealObserver();
 }, { passive: true, once: true });
-window.addEventListener('pageshow', function (event) {
-  if (event.persisted) {
-    window.location.reload();
-  }
-});
