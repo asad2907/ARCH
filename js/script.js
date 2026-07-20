@@ -1,5 +1,7 @@
+window.DBG && DBG('script.js: top (gsap=' + (typeof gsap) + ', ScrollTrigger=' + (typeof ScrollTrigger) + ')');
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+window.DBG && DBG('script.js: gsap plugins registered');
 
 // ===== LOADER / PAGE REVEAL =====
 const loader = document.getElementById('loader');
@@ -10,8 +12,9 @@ const loader = document.getElementById('loader');
 let animationsStarted = false;
 
 function startAnimationsOnce() {
-  if (animationsStarted) return;
+  if (animationsStarted) { window.DBG && DBG('startAnimationsOnce(): skipped (already started)'); return; }
   animationsStarted = true;
+  window.DBG && DBG('startAnimationsOnce(): calling initAnimations()');
   initAnimations();
 }
 
@@ -20,6 +23,7 @@ function startAnimationsOnce() {
 // restore), this guarantees the body is shown and the loader is gone. It is the
 // safety net that prevents content from ever being stuck at opacity:0.
 function revealPage() {
+  window.DBG && DBG('revealPage(): removing seamless-entry/show-loader, hiding loader');
   document.documentElement.classList.remove('seamless-entry', 'show-loader');
   document.body.classList.remove('page-leaving');
   if (loader) loader.style.display = 'none';
@@ -28,9 +32,13 @@ function revealPage() {
 
 const shouldShowLoader = document.documentElement.classList.contains('show-loader');
 
+window.DBG && DBG('path decision: shouldShowLoader=' + shouldShowLoader + ' loaderEl=' + !!loader);
 if (shouldShowLoader && loader) {
+  window.DBG && DBG('PATH = show-loader (first visit / reload)');
   window.addEventListener('load', () => {
+    window.DBG && DBG('show-loader: window.load -> scheduling loader-out in 1600ms');
     setTimeout(() => {
+      window.DBG && DBG('show-loader: 1600ms elapsed -> animating loader out (0.9s + 0.2 delay)');
       gsap.to(loader, {
         yPercent: -100,
         duration: 0.9,
@@ -48,8 +56,9 @@ if (shouldShowLoader && loader) {
   // but never depend on requestAnimationFrame alone: iOS Safari throttles rAF
   // during/after navigation, which was leaving body { opacity: 0 } and showing
   // stale/blank content. The timeout is a guaranteed fallback.
-  requestAnimationFrame(revealPage);
-  setTimeout(revealPage, 350);
+  window.DBG && DBG('PATH = seamless (in-session nav) -> scheduling rAF + 350ms timeout');
+  requestAnimationFrame(() => { window.DBG && DBG('seamless: rAF callback fired -> revealPage()'); revealPage(); });
+  setTimeout(() => { window.DBG && DBG('seamless: 350ms timeout fired -> revealPage()'); revealPage(); }, 350);
 }
 
 // ===== CUSTOM CURSOR =====
@@ -154,8 +163,10 @@ window.addEventListener('scroll', () => {
 
 // ===== INIT ANIMATIONS =====
 function initAnimations() {
+  window.DBG && DBG('initAnimations(): begin');
   // Home hero lines
   if (document.querySelector('.hero-headline')) {
+    window.DBG && DBG('initAnimations(): animating .hero-headline lines (delays up to 1.1s)');
     gsap.set('.hero-headline .line-reveal-inner', { y: '110%' });
     gsap.to('.hero-headline .line-reveal-inner', {
       y: '0%',
@@ -175,14 +186,18 @@ function initAnimations() {
   initHScrollDrag();
   initFilterBtns();
   initHeroParallax();
+  window.DBG && DBG('initAnimations(): end');
 }
 
 // ===== SCROLL REVEAL =====
 function initRevealObserver() {
   const revealEls = document.querySelectorAll('.reveal-up:not(.revealed), .reveal-fade:not(.revealed)');
+  window.DBG && DBG('initRevealObserver(): observing ' + revealEls.length + ' reveal element(s) [these start opacity:0]');
+  let firstFire = true;
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        if (firstFire) { firstFire = false; window.DBG && DBG('reveal observer: FIRST intersection callback fired'); }
         const el = entry.target;
         const delay = parseFloat(el.style.transitionDelay || el.dataset.delay || 0);
         setTimeout(() => {
@@ -204,11 +219,14 @@ function initRevealObserver() {
 
 // Line reveals on scroll
 function initLineRevealScroll() {
-  document.querySelectorAll('.page-section.active .line-reveal').forEach(container => {
+  const containers = document.querySelectorAll('.page-section.active .line-reveal');
+  window.DBG && DBG('initLineRevealScroll(): found ' + containers.length + ' heading line-reveal(s) [start translateY(110%)]');
+  containers.forEach(container => {
     const inner = container.querySelector('.line-reveal-inner');
     if (!inner) return;
     const obs = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
+        window.DBG && DBG('line-reveal observer fired -> animating heading up (0.85s)');
         gsap.to(inner, { y: '0%', duration: 0.85, ease: 'power3.out' });
         obs.disconnect();
       }
@@ -217,7 +235,7 @@ function initLineRevealScroll() {
   });
 }
 
-setTimeout(initLineRevealScroll, 200);
+setTimeout(() => { window.DBG && DBG('initLineRevealScroll: 200ms timer fired -> setup'); initLineRevealScroll(); }, 200);
 
 // ===== COUNT UP =====
 function initCountUp() {
