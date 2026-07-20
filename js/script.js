@@ -44,12 +44,13 @@ if (shouldShowLoader && loader) {
   // GSAP CDN request on Safari), still reveal so the black loader can't hang.
   setTimeout(revealPage, 4200);
 } else {
-  // Seamless in-session navigation. Reveal on the next frame for the fade-in,
-  // but never depend on requestAnimationFrame alone: iOS Safari throttles rAF
-  // during/after navigation, which was leaving body { opacity: 0 } and showing
-  // stale/blank content. The timeout is a guaranteed fallback.
-  requestAnimationFrame(revealPage);
-  setTimeout(revealPage, 350);
+  // In-session navigation: there is no loader, so reveal immediately and
+  // SYNCHRONOUSLY. We must NOT gate this behind requestAnimationFrame: iOS/iPadOS
+  // Safari defers rAF callbacks until after the first post-navigation paint,
+  // which was the artificial ~1s delay that left the main content blank while
+  // the navbar/footer were already visible. Running now (script is at the end of
+  // <body>, so the DOM is ready) starts the content reveal on the same frame.
+  revealPage();
 }
 
 // ===== CUSTOM CURSOR =====
@@ -171,6 +172,7 @@ function initAnimations() {
   }
 
   initRevealObserver();
+  initLineRevealScroll();
   initCountUp();
   initHScrollDrag();
   initFilterBtns();
@@ -180,44 +182,79 @@ function initAnimations() {
 // ===== SCROLL REVEAL =====
 function initRevealObserver() {
   const revealEls = document.querySelectorAll('.reveal-up:not(.revealed), .reveal-fade:not(.revealed)');
+
+  const reveal = (el) => {
+    if (el.classList.contains('revealed')) return;
+    el.classList.add('revealed');
+    const delay = parseFloat(el.style.transitionDelay || el.dataset.delay || 0);
+    gsap.to(el, {
+      opacity: 1,
+      y: 0,
+      duration: 0.75,
+      ease: 'power3.out',
+      delay: delay
+    });
+  };
+
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const el = entry.target;
-        const delay = parseFloat(el.style.transitionDelay || el.dataset.delay || 0);
-        setTimeout(() => {
-          gsap.to(el, {
-            opacity: 1,
-            y: 0,
-            duration: 0.75,
-            ease: 'power3.out'
-          });
-          el.classList.add('revealed');
-        }, delay * 1000);
-        obs.unobserve(el);
+        reveal(entry.target);
+        obs.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-  revealEls.forEach(el => obs.observe(el));
+  revealEls.forEach(el => {
+    // Reveal anything already on screen straight away. The IntersectionObserver
+    // callback is deferred by iOS Safari right after a navigation, so relying on
+    // it alone left above-the-fold content blank for ~1s. Below-the-fold elements
+    // still animate in on scroll via the observer.
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (inView) {
+      reveal(el);
+    } else {
+      obs.observe(el);
+    }
+  });
 }
 
-// Line reveals on scroll
+// Line reveals on scroll (page headings). Called from initAnimations() so it
+// runs on the same frame as everything else — the old standalone
+// setTimeout(..., 200) added a flat 200ms delay before the heading could appear.
 function initLineRevealScroll() {
   document.querySelectorAll('.page-section.active .line-reveal').forEach(container => {
+    // The home hero headline is animated by the hero timeline in initAnimations();
+    // skip it here so we don't override its staggered entrance.
+    if (container.closest('.hero-headline')) return;
+
     const inner = container.querySelector('.line-reveal-inner');
-    if (!inner) return;
+    if (!inner || inner.dataset.revealed === 'true') return;
+
+    const show = () => {
+      inner.dataset.revealed = 'true';
+      gsap.to(inner, { y: '0%', duration: 0.85, ease: 'power3.out' });
+    };
+
+    // Headings already on screen reveal immediately instead of waiting for the
+    // IntersectionObserver callback, which iOS Safari defers after a navigation.
+    const rect = container.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (inView) {
+      show();
+      return;
+    }
+
     const obs = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
-        gsap.to(inner, { y: '0%', duration: 0.85, ease: 'power3.out' });
+        show();
         obs.disconnect();
       }
     }, { threshold: 0.1 });
     obs.observe(container);
   });
 }
-
-setTimeout(initLineRevealScroll, 200);
 
 // ===== COUNT UP =====
 function initCountUp() {
